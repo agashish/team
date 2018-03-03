@@ -13,7 +13,9 @@ app.use(bodyParser.json())
 mongoose.Promise = global.Promise
 
 //###### DATABASE CONNECTION
-mongoose.connect('mongodb://localhost:27017/parcticeProject')
+mongoose.connect( process.env.MONGODB_URI | 'mongodb://localhost:27017/parcticeProject')
+
+//https://calm-brushlands-31171.herokuapp.com/ | https://git.heroku.com/calm-brushlands-31171.git
 
 //###### INCLUDE MODELS
 const {Books} = require('./models/books')
